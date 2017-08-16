@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.where(private: false)
+    @questions = Question.all_by_query_params(params)
     respond_to do |format|
       format.json { render json: @questions }
     end
