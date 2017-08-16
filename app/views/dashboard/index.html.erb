@@ -1,0 +1,62 @@
+<h1>Dashboard</h1>
+<table border="1">
+  <thead>
+    <th>Tenant</th>
+    <th>API Key</th>
+    <th>API Request Count</th>
+  </thead>
+  <tbody>
+    <% @tenants.each do |tenant|%>
+      <tr>
+        <td><%= tenant.name%></td>
+        <td><%= tenant.api_key %></td>
+        <td><%= tenant.api_request_count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<table border="1">
+  <thead>
+    <th>User</th>
+    <th>Questions</th>
+    <th>Answers</th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.name %>
+        </td>
+        <td>
+          <table>
+            <thead></thead>
+            <tbody>
+              <% user.questions.each_with_index do |question, index| %>
+                <tr>
+                  <td>
+                    <%= index + 1 %>. <%= question.title %> <b><%= question.private ? '(Private)' : ''%></b>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <table>
+            <thead></thead>
+            <tbody>
+              <% user.answers.each_with_index do |answer, index| %>
+                <tr>
+                  <td>
+                    <%= index + 1 %>. <%= answer.body %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
