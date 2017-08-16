@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def verify_api_access_token
     authenticate_with_http_token do |access_token, options|
       @tenant = Tenant.find_by(api_key: access_token)
-      @tenant.update_column(:api_request_count, @tenant.api_request_count + 1)
+      @tenant.update_column(:api_request_count, @tenant.api_request_count + 1) if @tenant
     end
   end
 end
