@@ -10,7 +10,7 @@
       <tr>
         <td><%= tenant.name%></td>
         <td><%= tenant.api_key %></td>
-        <td><%= tenant.api_request_count %></td>
+        <td><%= tenant.tenant_api_requests.map(&:count).sum %></td>
       </tr>
     <% end %>
   </tbody>

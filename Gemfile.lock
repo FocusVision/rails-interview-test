@@ -48,6 +48,7 @@ GEM
     byebug (9.0.0)
     case_transform (0.2)
       activesupport
+    coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -76,6 +77,7 @@ GEM
     markdown-rails (0.2.1)
       rails
       rdiscount (>= 1.6.8, < 2.0)
+    method_source (0.8.2)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
@@ -83,7 +85,15 @@ GEM
     minitest (5.8.4)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     rack (1.6.4)
+    rack-attack (5.0.1)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.4)
@@ -124,6 +134,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    slop (3.6.0)
     spring (1.7.1)
     sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
@@ -158,6 +169,8 @@ DEPENDENCIES
   ffaker
   jquery-rails
   markdown-rails
+  pry-rails
+  rack-attack
   rails (= 4.2.4)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
