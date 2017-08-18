@@ -19,3 +19,13 @@ body {
   color: #333;
   background-color: #fff;
 }
+
+.column1 {
+  width: 40%;
+  float: left;
+}
+
+.column2 {
+  float: right;
+  width: 50%;
+}
