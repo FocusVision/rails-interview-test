@@ -1,4 +1,4 @@
-class QuestionsController < ApiController
+class Api::QuestionsController < ApiController
   def index
     @questions = Question.all_by_query_params(params)
     respond_to do |format|

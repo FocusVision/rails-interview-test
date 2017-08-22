@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'dashboard/index'
 
-  get 'questions/index'
+  namespace :api do
+    resources :questions, only: :index
+  end
 
   get 'welcome/index'
 
