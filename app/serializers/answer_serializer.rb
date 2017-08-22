@@ -1,6 +1,6 @@
 class AnswerSerializer < ActiveModel::Serializer
   attributes :id
-  attribute :body, key: :name
+  attribute :body
   attribute :answerer
 
   def answerer
