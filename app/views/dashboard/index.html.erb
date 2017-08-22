@@ -1,0 +1,79 @@
+<h1>Dashboard</h1>
+<div class="wrapper">
+  <div class="column1">
+    <table border="1">
+      <thead>
+        <th>User</th>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= user.name %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <table border="1">
+      <thead>
+        <th>Questions</th>
+      </thead>
+      <tbody>
+        <% @questions.each_with_index do |question, index| %>
+          <tr>
+            <td>
+              <%= index + 1 %>
+            </td>
+            <td>
+              <%= question.title %>
+            </td>
+            <td>
+              <b><%= question.private ? 'Private' : ''%></b>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br/>
+<div class="wrapper">
+  <div class="column1">
+    <table border="1">
+      <thead>
+        <th>Answers</th>
+      </thead>
+      <tbody>
+        <% @answers.each_with_index do |answer, index| %>
+          <tr>
+            <td>
+              <%= index + 1 %>
+            </td>
+            <td>
+              <%= answer.body %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="column2">
+    <table border="1">
+      <thead>
+        <th>Tenant</th>
+        <th>API Request Count</th>
+      </thead>
+      <tbody>
+        <% @tenants.each do |tenant|%>
+          <tr>
+            <td><%= tenant.name%></td>
+            <td><%= tenant.tenant_api_requests.map(&:count).sum %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
