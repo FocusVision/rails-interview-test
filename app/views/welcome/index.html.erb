@@ -1,0 +1,35 @@
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>No. Of Questions</th>
+    <th>No. Of Users</th>
+    <th>NO. Of Answers</th>
+    <th>NO. Of API Requests</th>
+  </tr>
+  <tr>
+    <td><%= @questions_count %></td>
+    <td><%= @users_count %></td>
+    <td><%= @answers_count %></td>
+    <td><%= @request_count %></td>
+  </tr>
+</table>
+
