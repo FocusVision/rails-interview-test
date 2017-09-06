@@ -27,3 +27,9 @@ end
     question.answers.create(body: FFaker::HipsterIpsum.sentence, user: users.sample)
   end
 end
+
+users = User.all
+users.each do |user|
+	user = user.build_api_key(:api_key => "#{user.id}#{SecureRandom.hex(8)}")
+	user.save
+end
